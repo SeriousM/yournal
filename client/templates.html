@@ -1,0 +1,75 @@
+<head>
+  <title>yournal</title>
+</head>
+
+<body>
+  {{renderRouter}}
+</body>
+
+<template name="home">
+  <div class="container">
+    <div class="page-header">
+      <h1>Welcome to Yournal</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-5 col-md-offset-3">
+          {{> signinForm}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="write">
+  <div class="container">
+    <div class="page-header">
+      <h1>Yournal of {{currentUser.username}}</h1>
+      <small><a id='logout'>Logout</a></small>
+    </div>
+    {{#each posts}}
+      <div class="panel panel-{{getColor mood}}">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{getDate timestamp}}</h3>
+        </div>
+        <div class="panel-body">
+          {{#markdown}}{{message}}{{/markdown}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+  <div id="footer">
+    <div class="container">
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="col-md-7">
+          <div class="form-group">
+            <textarea class="form-control" rows="1" id="message" placeholder="Hi, how was your day today?"></textarea>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <div class="input-group date" id="datetimepicker" data-date-format="DD. MMMM YYYY, HH:mm">
+              <input type="text" class="form-control" />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <select id="mood" class="span1">
+            <option value="happy" data-content="<span class='label label-success'><span class='glyphicon glyphicon-heart'></span></span>"></option>
+            <option value="ok" data-content="<span class='label label-info'><span class='glyphicon glyphicon-thumbs-up'></span></span>" selected></option>
+            <option value="neutral" data-content="<span class='label label-primary'><span class='glyphicon glyphicon-user'></span></span>" selected></option>
+            <option value="dangerous" data-content="<span class='label label-warning'><span class='glyphicon glyphicon-screenshot'></span></span>"></option>
+            <option value="angry" data-content="<span class='label label-danger'><span class='glyphicon glyphicon-fire'></span></span>"></option>
+          </select>
+        </div>
+        <div class="col-md-1">
+          <div class="form-group">
+            <button type="button" class="btn btn-success disabled" id="createMessage">Create!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

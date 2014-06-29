@@ -1,0 +1,83 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "bootstrap-3": {},
+      "accounts-ui-bootstrap-3": {},
+      "bootstrap3-datetimepicker": {},
+      "jquery-autosize": {},
+      "accounts-ui-bootstrap-3-blaze": {},
+      "iron-router": {},
+      "accounts-templates-bootstrap": {},
+      "fast-render": {},
+      "bootstrap-select": {}
+    },
+    "packages": {
+      "bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
+        "tag": "v3.1.1-1",
+        "commit": "63dd38968828bb8963636df93e9a1c45e2dfe67e"
+      },
+      "accounts-ui-bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
+        "tag": "v0.3.0-1",
+        "commit": "93ffa5d0e325dc7026de89f6d90c178fa04bdd3a"
+      },
+      "bootstrap3-datetimepicker": {
+        "git": "https://github.com/tsega/meteor-bootstrap3-datetimepicker.git",
+        "tag": "v0.1.2",
+        "commit": "9aebe6a10c6dceb17d4cfb3d03ea367748203428"
+      },
+      "jquery-autosize": {
+        "git": "https://github.com/spendflow/meteor-jquery-autosize.git",
+        "tag": "v1.17.8r1",
+        "commit": "517be3d26cb2901f65d07de94d250e498d07dc48"
+      },
+      "accounts-ui-bootstrap-3-blaze": {
+        "git": "https://github.com/rajit/meteor-accounts-ui-bootstrap-3.git",
+        "tag": "v0.3.7",
+        "commit": "a40b15f4b6213040accec10df97a7793e3a25225"
+      },
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "tag": "v0.7.1",
+        "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
+      },
+      "accounts-templates-bootstrap": {
+        "git": "https://github.com/splendido/accounts-templates-bootstrap.git",
+        "tag": "v0.0.10",
+        "commit": "3e1b8c9cc0675158ed9d382551cecdbdcd1c0380"
+      },
+      "fast-render": {
+        "git": "https://github.com/arunoda/meteor-fast-render.git",
+        "tag": "v0.2.8",
+        "commit": "149984b1aff3a5642a270aff9bd9006872c8302e"
+      },
+      "bootstrap-select": {
+        "git": "https://github.com/amrali/bootstrap-select-meteor.git",
+        "tag": "v1.5.2",
+        "commit": "61588ec8326987ded204724d85843eb6997cfcfb"
+      },
+      "moment": {
+        "git": "https://github.com/acreeger/meteor-moment.git",
+        "tag": "v2.6.0",
+        "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.4",
+        "commit": "b40e9b0612329288d75cf52ad14a7da64bb8618f"
+      },
+      "accounts-templates-core": {
+        "git": "https://github.com/splendido/accounts-templates-core.git",
+        "tag": "v0.0.11",
+        "commit": "0e45146a21409c6d1984108664f8809672343194"
+      },
+      "accounts-t9n": {
+        "git": "https://github.com/splendido/meteor-accounts-t9n.git",
+        "branch": "master",
+        "commit": "8e6c9de02ed12d71fa2dcd79d59bc7952cb22097"
+      }
+    }
+  }
+}

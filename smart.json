@@ -1,0 +1,13 @@
+{
+  "packages": {
+    "bootstrap-3": {},
+    "accounts-ui-bootstrap-3": {},
+    "bootstrap3-datetimepicker": {},
+    "jquery-autosize": {},
+    "accounts-ui-bootstrap-3-blaze": {},
+    "iron-router": {},
+    "accounts-templates-bootstrap": {},
+    "fast-render": {},
+    "bootstrap-select": {}
+  }
+}
