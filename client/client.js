@@ -57,6 +57,7 @@ Template.write.events = {
         $('#datetimepicker').data("DateTimePicker").setDate(moment());
         $('#mood').val('neutral').selectpicker('refresh');
         $('#createMessage').addClass('disabled');
+        $('#message').autosize().trigger('autosize.resize');
         $('#message').val('').focus();
       }
     });
