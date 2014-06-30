@@ -14,8 +14,18 @@ Template.write.getColor = function(mood){
     default: return 'primary';
   }
 };
-Template.write.getDate = function(date){
-  return moment(date).format('DD. MMMM YYYY, HH:mm');
+Template.write.getGlyphName = function(mood){
+  switch (mood){
+    case 'happy': return 'heart';
+    case 'ok': return 'thumbs-up';
+    case 'neutral': return 'user';
+    case 'dangerous': return 'screenshot';
+    case 'angry': return 'fire';
+    default: return 'user';
+  }
+};
+Template.write.getDateFormat = function(date){
+  return moment(date).format('ddd, DD. MMMM YYYY, HH:mm');
 };
 Template.write.events = {
   'keyup #message, change #message': function(){
