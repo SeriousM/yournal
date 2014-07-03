@@ -46,3 +46,27 @@ body {
 .panel-heading {
   padding: 5px 10px;
 }
+img.emoji {
+  height: 18px;
+}
+blockquote img.emoji {
+  height: 22px;
+}
+h1>img.emoji {
+  height: 33px;
+}
+h2>img.emoji {
+  height: 32px;
+}
+h3>img.emoji {
+  height: 25px;
+}
+h4>img.emoji {
+  height: 16px;
+}
+h5>img.emoji {
+  height: 14px;
+}
+h6>img.emoji {
+  height: 11px;
+}
