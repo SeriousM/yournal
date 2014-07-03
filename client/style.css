@@ -70,3 +70,9 @@ h5>img.emoji {
 h6>img.emoji {
   height: 11px;
 }
+.show-hide-icon {
+  margin-right: 10px;
+}
+.hand {
+  cursor: pointer;
+}

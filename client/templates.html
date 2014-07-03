@@ -23,14 +23,14 @@
   <div class="container">
     <div class="page-header">
       <h1>Yournal of {{currentUser.username}}</h1>
-      <small><a id='logout'>Logout</a></small>
+      <small><a id='logout' class="hand">Logout</a></small>
     </div>
     {{#each posts}}
       <div class="panel panel-{{getColor mood}}">
-        <div class="panel-heading">
-          <h3 class="panel-title">{{getDateFormat timestamp}}<span class="pull-right glyphicon glyphicon-{{getGlyphName mood}}"></span></h3>
+        <div class="panel-heading toggle-post hand">
+          <h3 class="panel-title"><span class="show-hide-icon glyphicon glyphicon-eye-close"></span>{{getDateFormat timestamp}}<span class="pull-right glyphicon glyphicon-{{getGlyphName mood}}"></span></h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="display: none;">
           {{#markdown}}{{#emoji}}{{message}}{{/emoji}}{{/markdown}}
         </div>
       </div>

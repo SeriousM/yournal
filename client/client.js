@@ -2,6 +2,7 @@ Template.write.rendered = function() {
   $('#datetimepicker').datetimepicker({sideBySide: true});
   $('#datetimepicker').data("DateTimePicker").setDate(moment());
   $('#message').autosize();
+  // http://silviomoreto.github.io/bootstrap-select/
   $('#mood').selectpicker();
 };
 Template.write.getColor = function(mood){
@@ -61,7 +62,8 @@ Template.write.events = {
         $('#message').val('').focus();
       }
     });
+  },
+  'click .toggle-post': function(e){
+    $(e.target).closest('.panel').find('.panel-body').toggle();
   }
 };
-
-// http://silviomoreto.github.io/bootstrap-select/
