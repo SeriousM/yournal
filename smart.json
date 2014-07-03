@@ -8,6 +8,7 @@
     "iron-router": {},
     "accounts-templates-bootstrap": {},
     "fast-render": {},
-    "bootstrap-select": {}
+    "bootstrap-select": {},
+    "emoji-continued": {}
   }
 }
