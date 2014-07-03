@@ -61,8 +61,8 @@
       },
       "emoji-continued": {
         "git": "https://github.com/SeriousM/meteor-emoji.git",
-        "tag": "v1.0.1",
-        "commit": "571c1a30546c5f680fa47b55d44859ff8e86a266"
+        "tag": "v1.0.2",
+        "commit": "b9d2bf03fa343e2fdc6c38d0f21e75d96a1044d3"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
