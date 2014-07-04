@@ -1,6 +1,6 @@
 # yournal
 
-http://yournal.meteor.com/
+https://yournal.meteor.com/
 
 # settings
 
