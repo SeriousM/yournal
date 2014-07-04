@@ -2,7 +2,7 @@
 
 http://yournal.meteor.com/
 
-# execution
+# settings
 
 create a file called `app-settings.json` with this content:
 ```json
@@ -11,3 +11,11 @@ create a file called `app-settings.json` with this content:
   "kadiraAppSecret": "<app secret>"
 }
 ```
+
+# execution
+
+`mrt -p <port> --settings app-settings.json`
+
+# deployment
+
+`meteor deploy a-name-for-your-app.meteor.com --settings app-settings.json`
