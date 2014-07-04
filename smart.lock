@@ -11,7 +11,8 @@
       "accounts-templates-bootstrap": {},
       "fast-render": {},
       "bootstrap-select": {},
-      "emoji-continued": {}
+      "emoji-continued": {},
+      "kadira": {}
     },
     "packages": {
       "bootstrap-3": {
@@ -63,6 +64,11 @@
         "git": "https://github.com/SeriousM/meteor-emoji.git",
         "tag": "v1.0.2",
         "commit": "b9d2bf03fa343e2fdc6c38d0f21e75d96a1044d3"
+      },
+      "kadira": {
+        "git": "https://github.com/meteorhacks/kadira.git",
+        "tag": "v2.4.7",
+        "commit": "c860e10cbe416ebb3d4999adccd5c486f232f9c6"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
