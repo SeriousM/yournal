@@ -48,7 +48,7 @@ Template.write.events = {
         mood = $('#mood').val(),
         post;
     
-    post = {message: message, timestamp: timestamp, mood: mood, creator: Meteor.userId()};
+    post = {message: message, timestamp: timestamp, mood: mood};
     
     Meteor.call('createPost', post, function(error, result){
       if (error){

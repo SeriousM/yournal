@@ -14,11 +14,18 @@ function isValidMood(value){
 Meteor.methods({
 	createPost: function(post) {
     check(post, {
-      creator: Match.Where(function sameAsUserId(value){return value === Meteor.userId();}),
       message: String,
       timestamp: Date,
       mood: Match.Where(isValidMood)
     });
+    
+    // redefine the post structure
+    post = {
+      message: post.message,
+      timestamp: post.timestamp,
+      mood: post.mood,
+      creator: Meteor.userId()
+    }
     
     return Posts.insert(post);
 	}
