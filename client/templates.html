@@ -19,6 +19,17 @@
   </div>
 </template>
 
+<template name="inlineTutorial">
+  <div class="jumbotron">
+    <h1>Hello, {{currentUser.username}}!</h1>
+    <p>Here you can create your journal posts.</p>
+    <p>Every post is hidden by default to protect it against keen eyes!<br>
+    Just click on the <span class="glyphicon glyphicon-eye-close"></span> to toggle the visibility!</p>
+    <p>This message will disapear once you created your first entry.</p>
+    <p>Have fun!</p>
+  </div>
+</template>
+
 <template name="write">
   <div class="container">
     <div class="page-header">
@@ -34,6 +45,8 @@
           {{#markdown}}{{#emoji}}{{message}}{{/emoji}}{{/markdown}}
         </div>
       </div>
+    {{else}}
+      {{> inlineTutorial}}
     {{/each}}
   </div>
 
