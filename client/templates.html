@@ -1,5 +1,5 @@
 <head>
-  <title>yournal</title>
+  <title>Yournal</title>
 </head>
 
 <body>
@@ -7,10 +7,8 @@
 </body>
 
 <template name="home">
+  {{> navigation}}
   <div class="container">
-    <div class="page-header">
-      <h1>Welcome to Yournal</h1>
-    </div>
     <div class="row">
       <div class="col-md-5 col-md-offset-3">
           {{> signinForm}}
@@ -30,12 +28,40 @@
   </div>
 </template>
 
-<template name="write">
-  <div class="container">
-    <div class="page-header">
-      <h1>Yournal of {{currentUser.username}}</h1>
-      <small><a id='logout' class="hand">Logout</a></small>
+<template name="navigation">
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Yournal</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      {{! the margin-right setting is a hack to keep the logout button in the navbar }}
+        <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
+          {{#if currentUser}}
+            <li><p class="navbar-text">Signed in as {{currentUser.username}}</p></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> Settings <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Comming soon</a></li>
+              </ul>
+            </li>
+            <li><button type="button" id="logout" class="btn btn-default navbar-btn">Logout</button></li>
+          {{/if}}
+        </ul>
+      </div>
     </div>
+  </nav>
+</template>
+
+<template name="write">
+  {{> navigation}}
+  <div class="container">
     {{#each posts}}
       <div class="panel panel-{{getColor mood}}">
         <div class="panel-heading toggle-post hand">
