@@ -32,19 +32,21 @@
   <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+        {{#if currentUser}}
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        {{/if}}
         <a class="navbar-brand" href="#">Yournal</a>
         <p class="navbar-text">{{version}}</p>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       {{! the margin-right setting is a hack to keep the logout button in the navbar }}
-        <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
-          {{#if currentUser}}
+        {{#if currentUser}}
+          <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
             <li><p class="navbar-text">Signed in as {{currentUser.username}}</p></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> Settings <span class="caret"></span></a>
@@ -53,8 +55,8 @@
               </ul>
             </li>
             <li><button type="button" id="logout" class="btn btn-default navbar-btn">Logout</button></li>
-          {{/if}}
-        </ul>
+          </ul>
+        {{/if}}
       </div>
     </div>
   </nav>
