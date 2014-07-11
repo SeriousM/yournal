@@ -67,3 +67,4 @@ Template.write.events = {
     $(e.target).closest('.panel').find('.panel-body').toggle();
   }
 };
+Template.navigation.version = getVersion;
