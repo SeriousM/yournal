@@ -1,23 +1,25 @@
 // ****************************** SETTINGS PROTECTION ******************************
-Meteor.startup(function(){
-  if (!_.isObject(Meteor.settings) || _.isEmpty(Meteor.settings)){
-    throw new Meteor.Error(500, 'This meteor instance was launched without settings!');
-  }
-  
-  var requiredSettingKeys = ['kadiraAppId', 'kadiraAppSecret'],
-      existingSettingKeys = Object.keys(Meteor.settings),
-      missingSettingKeys = [];
-  
-  _.each(requiredSettingKeys, function(key){
-    if (!_.contains(existingSettingKeys, key)){
-      missingSettingKeys.push(key);
+if(Meteor.isServer) {
+  Meteor.startup(function(){
+    if (!_.isObject(Meteor.settings) || _.isEmpty(Meteor.settings)){
+      throw new Meteor.Error(500, 'This meteor instance was launched without settings!');
+    }
+    
+    var requiredSettingKeys = ['kadiraAppId', 'kadiraAppSecret'],
+        existingSettingKeys = Object.keys(Meteor.settings),
+        missingSettingKeys = [];
+    
+    _.each(requiredSettingKeys, function(key){
+      if (!_.contains(existingSettingKeys, key)){
+        missingSettingKeys.push(key);
+      }
+    });
+    
+    if (missingSettingKeys.length){
+      throw new Meteor.Error(500, 'This meteor settings are missing: ' + JSON.stringify(missingSettingKeys));
     }
   });
-  
-  if (missingSettingKeys.length){
-    throw new Meteor.Error(500, 'This meteor settings are missing: ' + JSON.stringify(missingSettingKeys));
-  }
-});
+}
 
 // ************************************ KADIRA *************************************
 if(Meteor.isServer) {
