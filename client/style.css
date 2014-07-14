@@ -76,3 +76,9 @@ h6>img.emoji {
 .hand {
   cursor: pointer;
 }
+.logo-img {
+  margin-right: 3px;
+  margin-top: -3px;
+  width: 16px;
+  height: 16px;
+}
