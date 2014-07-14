@@ -10,6 +10,7 @@
     "fast-render": {},
     "bootstrap-select": {},
     "emoji-continued": {},
-    "kadira": {}
+    "kadira": {},
+    "iron-router-ga": {}
   }
 }

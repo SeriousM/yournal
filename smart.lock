@@ -12,7 +12,8 @@
       "fast-render": {},
       "bootstrap-select": {},
       "emoji-continued": {},
-      "kadira": {}
+      "kadira": {},
+      "iron-router-ga": {}
     },
     "packages": {
       "bootstrap-3": {
@@ -22,8 +23,8 @@
       },
       "accounts-ui-bootstrap-3": {
         "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
-        "tag": "v0.3.2",
-        "commit": "8686c0d3107cf48c72a5500b027f081c7e79dbbc"
+        "tag": "v0.3.3",
+        "commit": "2e50b605d8d5ed68e48c4529a65f13552d8af3f9"
       },
       "bootstrap3-datetimepicker": {
         "git": "https://github.com/tsega/meteor-bootstrap3-datetimepicker.git",
@@ -37,8 +38,8 @@
       },
       "accounts-ui-bootstrap-3-blaze": {
         "git": "https://github.com/rajit/meteor-accounts-ui-bootstrap-3.git",
-        "tag": "v0.3.7",
-        "commit": "a40b15f4b6213040accec10df97a7793e3a25225"
+        "tag": "v0.3.9",
+        "commit": "1f21dbc5cadc788c0ada5df4f730b26660a1d5ea"
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
@@ -57,8 +58,8 @@
       },
       "bootstrap-select": {
         "git": "https://github.com/amrali/bootstrap-select-meteor.git",
-        "tag": "v1.5.2",
-        "commit": "61588ec8326987ded204724d85843eb6997cfcfb"
+        "tag": "v1.5.4",
+        "commit": "de99107c031dad11327b7739e9f7b389a229c63f"
       },
       "emoji-continued": {
         "git": "https://github.com/SeriousM/meteor-emoji.git",
@@ -67,8 +68,13 @@
       },
       "kadira": {
         "git": "https://github.com/meteorhacks/kadira.git",
-        "tag": "v2.4.7",
-        "commit": "c860e10cbe416ebb3d4999adccd5c486f232f9c6"
+        "tag": "v2.4.8",
+        "commit": "5f4437af113537def34484c7b7a2a5e4d60847a9"
+      },
+      "iron-router-ga": {
+        "git": "https://github.com/reywood/meteor-iron-router-ga.git",
+        "tag": "v0.2.4",
+        "commit": "4f65a5bf9c600582214ff9e91ee760f3fbad85eb"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
@@ -88,7 +94,7 @@
       "accounts-t9n": {
         "git": "https://github.com/splendido/meteor-accounts-t9n.git",
         "branch": "master",
-        "commit": "9189c58aeba752d3e369f9fad5e1f718d90d2b3f"
+        "commit": "f81acad9c388513d594ba661aa0a2cc95816485c"
       }
     }
   }
