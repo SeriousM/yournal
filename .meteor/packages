@@ -3,19 +3,18 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-standard-app-packages
-bootstrap-3
-bootstrap3-datetimepicker
-jquery-autosize
-accounts-ui
+meteor-platform
+seriousm:emoji-continued
+ian:accounts-ui-bootstrap-3
+splendido:accounts-templates-bootstrap
+mizzao:bootstrap-3
+tsega:bootstrap3-datetimepicker
+copleykj:jquery-autosize
+iron:router
+meteorhacks:fast-render
+reywood:iron-router-ga
+stylus
+meteorhacks:kadira
 accounts-password
-iron-router
-accounts-templates-bootstrap
-fast-render
-bootstrap-select
 showdown
-audit-argument-checks
-emoji-continued
-kadira
-iron-router-ga
-stylus-latest
+
