@@ -107,7 +107,6 @@ if(Meteor.isServer) {
 
 // ****************************** ACCOUNTS TEMPLATES *******************************
 
-/*
 // https://github.com/splendido/accounts-templates-core/blob/master/lib/core.js
 
 AccountsTemplates.configure({
@@ -154,6 +153,3 @@ _.extend(emailField, {
 //   required: true,
 //   type: "password"
 // })
-
-AccountsTemplates.init();
-*/
