@@ -68,8 +68,8 @@ var filters = Router._filters = {
 };
 
 if(Meteor.isClient){
-  Router.onBeforeAction(filters.redirectToUserAreaIfLoggedIn, {except: ['write']});
-  Router.onBeforeAction(filters.blockAnonymousUser, {only: ['write']});
+  Router.onBeforeAction(filters.redirectToUserAreaIfLoggedIn, {except: ['write', 'export']});
+  Router.onBeforeAction(filters.blockAnonymousUser, {only: ['write', 'export']});
 }
 
 Router.route('/', {
@@ -79,6 +79,17 @@ Router.route('/', {
 Router.route('/write', {
   name: 'write',
   template: 'write',
+  waitOn: function () {
+    return Meteor.subscribe('postsOfCurrentUser');
+  },
+  data: function () {
+    return {posts: Posts.find({},{sort:{timestamp: -1}})};
+  },
+  fastRender: true
+});
+Router.route('/export', {
+  name: 'export',
+  template: 'export',
   waitOn: function () {
     return Meteor.subscribe('postsOfCurrentUser');
   },
@@ -97,6 +108,9 @@ if(Meteor.isServer) {
     this.subscribe('currentUser');
   });
   FastRender.route('/write', function() {
+    this.subscribe('postsOfCurrentUser');
+  });
+  FastRender.route('/export', function() {
     this.subscribe('postsOfCurrentUser');
   });
 }

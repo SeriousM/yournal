@@ -7,7 +7,7 @@
   });
 
   window.addEventListener('beforeunload', function(e) {
-    if (!hotcodepush && $('#message').val().length)
+    if (!hotcodepush && $('#message').val() && $('#message').val().length)
     {
       e.returnValue = "Discard your current message?";
     }
@@ -84,3 +84,10 @@ Template.write.events = {
   }
 };
 Template.navigation.version = getVersion;
+Template.export.helpers({
+  printPosts: function(posts){
+    var postObjects = posts.fetch(),
+        modifiedPosts = postObjects.map(function(item){return _.pick(item, 'message', 'timestamp', 'mood')});
+    return JSON.stringify(modifiedPosts, null, 2);
+  }
+});

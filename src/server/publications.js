@@ -11,6 +11,10 @@ Meteor.publish('postsOfCurrentUser', function() {
   return Posts.find({creator: this.userId});
 });
 
+Meteor.publish('postsOfCurrentUserForExport', function() {
+  return Posts.find({creator: this.userId}, {fields: {message: 1, timestamp: 1, mood: 1}});
+});
+
 // debug purposes
 //Meteor.publish('allPosts', function() {
 //  return Posts.find({});
