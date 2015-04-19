@@ -1,3 +1,3 @@
 getVersion = function(){
-  return 'v1.1.1';
-}
+  return 'v1.2.0';
+};
