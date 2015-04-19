@@ -73,10 +73,6 @@ if(Meteor.isClient){
 }
 
 Router.route('/', {
-  name: 'root',
-  template: 'home',
-});
-Router.route('/home', {
   name: 'home',
   template: 'home',
 });
@@ -112,7 +108,7 @@ if(Meteor.isServer) {
 AccountsTemplates.configure({
   showLabels: false,
   
-  homeRoutePath: '/home',
+  homeRoutePath: '/',
   //signInRoutePath: '/',
   //signInRouteName: 'signin',
   //signInRouteTemplate: 'fullPageSigninForm',
