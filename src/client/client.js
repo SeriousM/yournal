@@ -1,6 +1,6 @@
 Template.write.rendered = function() {
   $('#datetimepicker').datetimepicker({sideBySide: true});
-  $('#datetimepicker').data("DateTimePicker").setDate(moment());
+  $('#datetimepicker').data("DateTimePicker").date(moment());
   $('#message').autosize();
   // http://silviomoreto.github.io/bootstrap-select/
   $('#mood').selectpicker();
@@ -44,7 +44,7 @@ Template.write.events = {
   },
   'click #createMessage': function(){
     var message = $('#message').val(),
-        timestamp = $('#datetimepicker').data("DateTimePicker").date.toDate(),
+        timestamp = $('#datetimepicker').data("DateTimePicker").date().toDate(),
         mood = $('#mood').val(),
         post;
     
@@ -55,7 +55,7 @@ Template.write.events = {
         alert(error);
       }
       else{
-        $('#datetimepicker').data("DateTimePicker").setDate(moment());
+        $('#datetimepicker').data("DateTimePicker").date(moment());
         $('#mood').val('neutral').selectpicker('refresh');
         $('#createMessage').addClass('disabled');
         $('#message').val('').focus();
