@@ -48,17 +48,21 @@ Router.configure({
 });
 
 var filters = Router._filters = {
-  blockAnonymousUser: function(pause) {
+  blockAnonymousUser: function() {
     if (!(Meteor.loggingIn() || Meteor.user())) {
-      pause();
       this.redirect('home');
+    }
+    else{
+      this.next();
     }
   },
 
-  redirectToUserAreaIfLoggedIn: function(pause){
+  redirectToUserAreaIfLoggedIn: function(){
     if (Meteor.user()) {
-      pause();
       this.redirect('write');
+    }
+    else{
+      this.next();
     }
   }
 };
@@ -68,22 +72,20 @@ if(Meteor.isClient){
   Router.onBeforeAction(filters.blockAnonymousUser, {only: ['write']});
 }
 
-Router.map(function() {
-  this.route('home', {
-    template: 'home',
-    path: '/'
-  });
-  this.route('write', {
-    template: 'write',
-    path: '/write',
-    waitOn: function () {
-      return Meteor.subscribe('postsOfCurrentUser');
-    },
-    data: function () {
-      return {posts: Posts.find({},{sort:{timestamp: -1}})};
-    },
-    fastRender: true
-  });
+Router.route('/', {
+  name: 'home',
+  template: 'home',
+});
+Router.route('/write', {
+  name: 'write',
+  template: 'write',
+  waitOn: function () {
+    return Meteor.subscribe('postsOfCurrentUser');
+  },
+  data: function () {
+    return {posts: Posts.find({},{sort:{timestamp: -1}})};
+  },
+  fastRender: true
 });
 
 // ********************************** FAST RENDER **********************************
@@ -101,12 +103,12 @@ if(Meteor.isServer) {
 
 // ****************************** ACCOUNTS TEMPLATES *******************************
 
-https://github.com/splendido/accounts-templates-core/blob/master/lib/core.js
+// https://github.com/splendido/accounts-templates-core/blob/master/lib/core.js
 
 AccountsTemplates.configure({
   showLabels: false,
   
-  homeRoutePath: '/home',
+  homeRoutePath: '/',
   //signInRoutePath: '/',
   //signInRouteName: 'signin',
   //signInRouteTemplate: 'fullPageSigninForm',
@@ -147,5 +149,3 @@ _.extend(emailField, {
 //   required: true,
 //   type: "password"
 // })
-
-AccountsTemplates.init();

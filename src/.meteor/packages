@@ -1,4 +1,5 @@
 # Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
 #
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
@@ -6,7 +7,6 @@
 meteor-platform
 seriousm:emoji-continued
 ian:accounts-ui-bootstrap-3
-splendido:accounts-templates-bootstrap
 mizzao:bootstrap-3
 tsega:bootstrap3-datetimepicker
 copleykj:jquery-autosize
@@ -17,3 +17,6 @@ stylus
 meteorhacks:kadira
 accounts-password
 showdown
+msavin:mongol
+msavin:jetsetter
+useraccounts:bootstrap
