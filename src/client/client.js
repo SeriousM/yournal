@@ -1,3 +1,19 @@
+(function registerCloseWindowEvent(){
+  var hotcodepush = false;
+
+  Meteor._reload.onMigrate(function () {
+      hotcodepush = true;
+      return [true];
+  });
+
+  window.addEventListener('beforeunload', function(e) {
+    if (!hotcodepush && $('#message').val().length)
+    {
+      e.returnValue = "Discard your current message?";
+    }
+  });
+})();
+
 Template.write.rendered = function() {
   $('#datetimepicker').datetimepicker({sideBySide: true});
   $('#datetimepicker').data("DateTimePicker").date(moment());
