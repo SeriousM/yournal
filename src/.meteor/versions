@@ -43,7 +43,6 @@ less@1.0.14
 livedata@1.0.13
 localstorage@1.0.3
 logging@1.0.7
-markdown@1.0.4
 meteor@1.1.6
 meteor-platform@1.2.2
 meteorhacks:fast-render@2.3.2
@@ -64,6 +63,7 @@ msavin:mongol@1.0.22
 npm-bcrypt@0.7.8_2
 observe-sequence@1.0.6
 ordered-dict@1.0.3
+perak:markdown@1.0.4
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5
@@ -75,7 +75,6 @@ seriousm:emoji-continued@1.4.0
 service-configuration@1.0.4
 session@1.1.0
 sha@1.0.3
-showdown@1.0.4
 softwarerero:accounts-t9n@1.0.9
 spacebars@1.0.6
 spacebars-compiler@1.0.6
