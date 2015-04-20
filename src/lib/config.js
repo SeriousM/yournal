@@ -143,23 +143,8 @@ _.extend(emailField, {
   type: 'text',
   required: true,
   minLength: 6,
-  re: /^[a-zA-Z0-9]+$/
+  re: /^[a-zA-Z0-9]+$/,
+  func: function(email) {
+    return !email || !email.length;
+  }
 });
-
-
-// AccountsTemplates.removeField('email');
-// AccountsTemplates.removeField('password');
-// AccountsTemplates.addField({
-//     name: 'login',
-//     placeholder: 'Username',
-//     type: 'text',
-//     required: true,
-//     minLength: 6,
-//     re: /^[a-zA-Z0-9]+$/,
-// });
-// AccountsTemplates.addField({
-//   minLength: 6,
-//   name: "password",
-//   required: true,
-//   type: "password"
-// })
