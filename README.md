@@ -14,7 +14,7 @@ create files called `app-settings-dev.json` and `app-settings-prod.json` with th
 
 # execution
 
-`mrt -p <port> --settings app-settings-dev.json`
+`meteor --port <port> --settings app-settings-dev.json`
 
 # deployment
 
