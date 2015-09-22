@@ -4,7 +4,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
 seriousm:emoji-continued
 ian:accounts-ui-bootstrap-3
 mizzao:bootstrap-3
@@ -21,3 +20,20 @@ msavin:jetsetter
 useraccounts:bootstrap
 momentjs:moment
 perak:markdown
+standard-minifiers
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
+ecmascript
+ecmascript-collections
+es5-shim
