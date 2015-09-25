@@ -8,7 +8,10 @@ create files called `app-settings-dev.json` and `app-settings-prod.json` with th
 ```json
 {
   "kadiraAppId": "<app id>",
-  "kadiraAppSecret": "<app secret>"
+  "kadiraAppSecret": "<app secret>",
+  "public": {
+    "ga": false || {"id": "<google analytics id>"}
+  }
 }
 ```
 
