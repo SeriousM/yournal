@@ -35,3 +35,4 @@ check
 ecmascript
 ecmascript-collections
 es5-shim
+webtempest:animate

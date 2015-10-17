@@ -128,18 +128,20 @@
     </table>
   </div>
   <div class="container">
-    {{#each posts}}
-      <div class="panel panel-{{getColor mood}}">
-        <div class="panel-heading toggle-post hand">
-          <h3 class="panel-title"><span class="show-hide-icon glyphicon glyphicon-eye-close"></span>{{getDateFormat timestamp}}<span class="pull-right glyphicon glyphicon-{{getGlyphName mood}}"></span></h3>
+    {{#transition in="flipInX" out="flipOutX"}}
+      {{#each posts}}
+        <div class="panel panel-{{getColor mood}}">
+          <div class="panel-heading toggle-post hand">
+            <h3 class="panel-title"><span class="show-hide-icon glyphicon glyphicon-eye-close"></span>{{getDateFormat timestamp}}<span class="pull-right glyphicon glyphicon-{{getGlyphName mood}}"></span></h3>
+          </div>
+          <div class="panel-body" style="display: none;">
+            {{#markdown}}{{#emoji}}{{message}}{{/emoji}}{{/markdown}}
+          </div>
         </div>
-        <div class="panel-body" style="display: none;">
-          {{#markdown}}{{#emoji}}{{message}}{{/emoji}}{{/markdown}}
-        </div>
-      </div>
-    {{else}}
-      {{> inlineTutorial}}
-    {{/each}}
+      {{else}}
+        {{> inlineTutorial}}
+      {{/each}}
+    {{/transition}}
   </div>
 </template>
 

@@ -101,3 +101,4 @@ useraccounts:bootstrap@1.12.4
 useraccounts:core@1.12.4
 webapp@1.2.2
 webapp-hashing@1.0.5
+webtempest:animate@0.1.4
