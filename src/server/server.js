@@ -18,7 +18,7 @@ Meteor.methods({
       timestamp: Date,
       mood: Match.Where(isValidMood)
     });
-    
+
     // redefine the post structure
     post = {
       message: post.message,
@@ -26,7 +26,19 @@ Meteor.methods({
       mood: post.mood,
       creator: Meteor.userId()
     }
-    
+
     return Posts.insert(post);
-	}
+	},
+	saveDraft: function(post) {
+    check(post, {
+      message: String
+    });
+
+    // redefine the post structure
+    post = {
+      message: post.message
+    }
+
+    Meteor.users.update({_id:Meteor.userId()}, { $set: {draft: post} });
+	},
 });

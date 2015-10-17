@@ -17,9 +17,12 @@
 Template.write.rendered = function() {
   $('#datetimepicker').datetimepicker({sideBySide: true});
   $('#datetimepicker').data("DateTimePicker").date(moment());
-  $('#message').autosize();
   // http://silviomoreto.github.io/bootstrap-select/
+  $('#message').autosize();
   $('#mood').selectpicker();
+  if (Meteor.user().draft){
+    $('#message').text(Meteor.user().draft.message);
+  }
 };
 Template.write.getColor = function(mood){
   switch (mood){
@@ -52,6 +55,15 @@ Template.write.events = {
     else{
       $('#createMessage').addClass('disabled');
     }
+    // TODO: don't do that all the time, only after a certain treshhold + timeout
+    Meteor.call('saveDraft', {message: $('#message').val()}, function(error, result){
+      if (error){
+        alert(error);
+      }
+      else{
+        // TODO: show that the draft was saved!
+      }
+    });
   },
   'click #logout': function(){
     Meteor.logout(function(){
@@ -63,9 +75,9 @@ Template.write.events = {
         timestamp = $('#datetimepicker').data("DateTimePicker").date().toDate(),
         mood = $('#mood').val(),
         post;
-    
+
     post = {message: message, timestamp: timestamp, mood: mood};
-    
+
     Meteor.call('createPost', post, function(error, result){
       if (error){
         alert(error);
