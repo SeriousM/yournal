@@ -24,29 +24,30 @@ Template.write.rendered = function() {
     $('#message').text(Meteor.user().draft.message);
   }
 };
-Template.write.getColor = function(mood){
-  switch (mood){
-    case 'happy': return 'success';
-    case 'ok': return 'info';
-    case 'neutral': return 'primary';
-    case 'dangerous': return 'warning';
-    case 'angry': return 'danger';
-    default: return 'primary';
-  }
-};
-Template.write.getGlyphName = function(mood){
-  switch (mood){
-    case 'happy': return 'heart';
-    case 'ok': return 'thumbs-up';
-    case 'neutral': return 'user';
-    case 'dangerous': return 'screenshot';
-    case 'angry': return 'fire';
-    default: return 'user';
-  }
-};
-Template.write.getDateFormat = function(date){
-  return moment(date).format('ddd, DD. MMMM YYYY, HH:mm');
-};
+Template.write.helpers({
+  getColor: function(mood){
+    switch (mood){
+      case 'happy': return 'success';
+      case 'ok': return 'info';
+      case 'neutral': return 'primary';
+      case 'dangerous': return 'warning';
+      case 'angry': return 'danger';
+      default: return 'primary';
+    }
+  },
+  getGlyphName: function(mood){
+    switch (mood){
+      case 'happy': return 'heart';
+      case 'ok': return 'thumbs-up';
+      case 'neutral': return 'user';
+      case 'dangerous': return 'screenshot';
+      case 'angry': return 'fire';
+      default: return 'user';
+    }
+  },
+  getDateFormat: function(date){
+    return moment(date).format('ddd, DD. MMMM YYYY, HH:mm');
+  }});
 Template.write.events = {
   'keyup #message, change #message': function(){
     if ($('#message').val().length){
@@ -95,7 +96,7 @@ Template.write.events = {
     $(e.target).closest('.panel').find('.panel-body').toggle();
   }
 };
-Template.navigation.version = getVersion;
+Template.navigation.helpers({version: getVersion});
 Template.export.helpers({
   printPosts: function(posts){
     var postObjects = posts.fetch(),
