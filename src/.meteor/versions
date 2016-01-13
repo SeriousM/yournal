@@ -33,6 +33,7 @@ es5-shim@4.1.13
 fastclick@1.0.7
 geojson-utils@1.0.4
 hot-code-push@1.0.0
+houston:admin@2.0.6
 html-tools@1.0.5
 htmljs@1.0.5
 http@1.1.1
@@ -97,6 +98,7 @@ standard-minifiers@1.0.1
 stylus@2.511.0_2
 templating@1.1.4
 templating-tools@1.0.0
+tmeasday:paginated-subscription@0.2.4
 tracker@1.0.9
 tsega:bootstrap3-datetimepicker@4.17.37_1
 ui@1.0.8

@@ -4,13 +4,13 @@ if(Meteor.isServer) {
     if (!_.isObject(Meteor.settings) || _.isEmpty(Meteor.settings)){
       throw new Meteor.Error(500, 'This meteor instance was launched without settings!');
     }
-    
+
     var requiredSettingKeys = ['kadiraAppId', 'kadiraAppSecret', 'public'],
         requiredPublicSettingKeys = ['ga'],
         existingSettingKeys = Object.keys(Meteor.settings),
         existingPublicSettingKeys = Object.keys(Meteor.settings.public),
         missingSettingKeys = [];
-    
+
     _.each(requiredSettingKeys, function(key){
       if (!_.contains(existingSettingKeys, key)){
         missingSettingKeys.push(key);
@@ -68,8 +68,13 @@ var filters = Router._filters = {
 };
 
 if(Meteor.isClient){
-  Router.onBeforeAction(filters.redirectToUserAreaIfLoggedIn, {except: ['write', 'export']});
-  Router.onBeforeAction(filters.blockAnonymousUser, {only: ['write', 'export']});
+  // thats the routes for https://atmospherejs.com/houston/admin that needs to get excluded
+  var houstonRoutes = ['houston_home', 'houston_login', 'houston_change_password', 'houston_custom_template', 'houston_collection', 'houston_document'];
+
+  var userRoutes = ['write', 'export'];
+
+  Router.onBeforeAction(filters.redirectToUserAreaIfLoggedIn, {except: userRoutes.concat(houstonRoutes)});
+  Router.onBeforeAction(filters.blockAnonymousUser, {only: userRoutes});
 }
 
 Router.route('/', {
@@ -121,7 +126,7 @@ if(Meteor.isServer) {
 
 AccountsTemplates.configure({
   showLabels: false,
-  
+
   homeRoutePath: '/',
   //signInRoutePath: '/',
   //signInRouteName: 'signin',
