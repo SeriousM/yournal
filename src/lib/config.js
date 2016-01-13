@@ -36,6 +36,16 @@ if(Meteor.isServer) {
   });
 }
 
+// ************************************** HOUSTON **********************************
+
+// thats the routes for https://atmospherejs.com/houston/admin that needs to get excluded on iron-router
+var houstonRoutes = ['houston_home', 'houston_login', 'houston_change_password', 'houston_custom_template', 'houston_collection', 'houston_document'];
+
+if(Meteor.isServer) {
+  Houston.add_collection(Meteor.users);
+  Houston.add_collection(Houston._admins);
+}
+
 // ************************************ IRON ROUTER ********************************
 
 // https://github.com/TelescopeJS/Telescope/blob/master/lib/router.js
@@ -68,9 +78,6 @@ var filters = Router._filters = {
 };
 
 if(Meteor.isClient){
-  // thats the routes for https://atmospherejs.com/houston/admin that needs to get excluded
-  var houstonRoutes = ['houston_home', 'houston_login', 'houston_change_password', 'houston_custom_template', 'houston_collection', 'houston_document'];
-
   var userRoutes = ['write', 'export'];
 
   Router.onBeforeAction(filters.redirectToUserAreaIfLoggedIn, {except: userRoutes.concat(houstonRoutes)});
